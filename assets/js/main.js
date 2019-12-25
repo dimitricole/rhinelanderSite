@@ -4,10 +4,57 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+jQuery(document).ready(function ($) {
+
+	$('#checkbox').change(function(){
+	  setInterval(function () {
+		  moveRight();
+	  }, 3000);
+	});
+	
+	  var slideCount = $('#slider ul li').length;
+	  var slideWidth = $('#slider ul li').width();
+	  var slideHeight = $('#slider ul li').height();
+	  var sliderUlWidth = slideCount * slideWidth;
+	  
+	  $('#slider').css({ width: slideWidth, height: slideHeight });
+	  
+	  $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+	  
+	  $('#slider ul li:last-child').prependTo('#slider ul');
+  
+	  function moveLeft() {
+		  $('#slider ul').animate({
+			  left: + slideWidth
+		  }, 200, function () {
+			  $('#slider ul li:last-child').prependTo('#slider ul');
+			  $('#slider ul').css('left', '');
+		  });
+	  };
+  
+	  function moveRight() {
+		  $('#slider ul').animate({
+			  left: - slideWidth
+		  }, 200, function () {
+			  $('#slider ul li:first-child').appendTo('#slider ul');
+			  $('#slider ul').css('left', '');
+		  });
+	  };
+  
+	  $('a.control_prev').click(function () {
+		  moveLeft();
+	  });
+  
+	  $('a.control_next').click(function () {
+		  moveRight();
+	  });
+  
+  });    
+  
       // This example requires the Places library. Include the libraries=places
       // parameter when you first load the API. For example:
       // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
+	  
       var map;
       var service;
       var infowindow;
@@ -18,7 +65,7 @@
         infowindow = new google.maps.InfoWindow();
 
         map = new google.maps.Map(
-            document.getElementById('map'), {center: bronx, zoom: 15});
+            document.getElementById('map'), {center: bronx, zoom: 16});
 
         var request = {
           query: 'Rhinelander Auto Body LTD.',
@@ -50,6 +97,7 @@
         });
       }
 
+	  
 
 (function($) {
 
