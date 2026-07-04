@@ -1,0 +1,181 @@
+/* polish.css — refinement layer over the HTML5 UP "Dimension" base.
+   Loaded AFTER main.css so these rules win. Keeps the theme (dark glass
+   panels, thin white rules, gold brand accent) and tightens the details. */
+
+:root {
+	--gold: #ffd54a;
+	--gold-soft: rgba(255, 213, 74, 0.35);
+	--panel: rgba(22, 25, 29, 0.92);
+	--hairline: rgba(255, 255, 255, 0.18);
+}
+
+/* --- Title: keep the gold, drop the 24-layer outline ----------------------- */
+#rhineTitle {
+	color: var(--gold);
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85), 0 2px 14px rgba(0, 0, 0, 0.55);
+}
+
+/* --- Panels: glassier, softer corners -------------------------------------- */
+#main article {
+	background-color: var(--panel);
+	-webkit-backdrop-filter: blur(14px);
+	backdrop-filter: blur(14px);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 10px;
+}
+
+/* --- Services checklist ----------------------------------------------------- */
+.services-grid {
+	list-style: none;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0 1.5rem;
+	padding: 0.5rem 0 0;
+	margin: 0 0 2rem 0;
+}
+.services-grid li {
+	position: relative;
+	padding: 0.55rem 0 0.55rem 1.6rem;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+	font-size: 0.9rem;
+}
+.services-grid li:before {
+	content: '\2713';
+	position: absolute;
+	left: 0;
+	top: 0.5rem;
+	color: var(--gold);
+	font-weight: bold;
+}
+@media screen and (max-width: 620px) {
+	.services-grid { grid-template-columns: 1fr; }
+}
+
+/* --- Buttons ---------------------------------------------------------------- */
+#main .button.primary {
+	background-color: var(--gold);
+	color: #131519 !important;
+	border-color: var(--gold);
+	font-weight: 600;
+}
+#main .button.primary:hover {
+	background-color: #ffdf70;
+	border-color: #ffdf70;
+}
+#main .actions {
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	padding: 0;
+	margin: 0 0 2rem 0;
+}
+#main .actions .button:before { margin-right: 0.6rem; }
+
+/* --- Map embed ---------------------------------------------------------------- */
+.map-embed {
+	border-radius: 10px;
+	overflow: hidden;
+	border: 1px solid var(--hairline);
+	margin: 0 0 1.25rem 0;
+	background: rgba(0, 0, 0, 0.3);
+}
+.map-embed iframe {
+	display: block;
+	width: 100%;
+	height: 22rem;
+	border: 0;
+}
+.map-actions { margin-bottom: 1.5rem; }
+
+/* --- Slideshow ---------------------------------------------------------------- */
+.slides-viewport {
+	aspect-ratio: 4 / 3;
+	border-radius: 10px;
+	overflow: hidden;
+	background: rgba(0, 0, 0, 0.45);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.mySlides { height: 100%; }
+.mySlides img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+.prev, .next {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.75rem;
+	height: 2.75rem;
+	margin-top: -1.375rem;
+	padding: 0;
+	border-radius: 50%;
+	background: rgba(19, 21, 25, 0.55);
+	-webkit-backdrop-filter: blur(8px);
+	backdrop-filter: blur(8px);
+	border: 1px solid var(--hairline);
+	font-size: 1rem;
+	line-height: 1;
+}
+.prev { left: 0.75rem; }
+.next { right: 0.75rem; }
+.prev:hover, .next:hover { background-color: rgba(19, 21, 25, 0.85); }
+.slide-counter {
+	position: absolute;
+	left: 50%;
+	bottom: 0.75rem;
+	transform: translateX(-50%);
+	padding: 0.3rem 0.9rem;
+	border-radius: 999px;
+	background: rgba(19, 21, 25, 0.65);
+	-webkit-backdrop-filter: blur(8px);
+	backdrop-filter: blur(8px);
+	border: 1px solid var(--hairline);
+	font-size: 0.7rem;
+	letter-spacing: 0.15em;
+	color: #f2f2f2;
+}
+
+/* --- Contact form ------------------------------------------------------------- */
+.form-hint {
+	font-size: 0.85rem;
+	opacity: 0.8;
+	margin-top: 1.25rem;
+}
+
+/* --- Footer -------------------------------------------------------------------- */
+.contact-lines { margin: 1rem 0 0.75rem; }
+.phoneNumbers {
+	font-size: 1rem;
+	margin: 0 0 0.35rem 0;
+}
+.phoneNumbers .sep {
+	opacity: 0.5;
+	margin: 0 0.5rem;
+}
+#footer .credit {
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.45);
+}
+#footer .credit:hover { color: rgba(255, 255, 255, 0.75); }
+
+/* --- Accessibility & platform feel ---------------------------------------------- */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+	outline: 2px solid var(--gold);
+	outline-offset: 2px;
+}
+#wrapper {
+	padding-left: max(2rem, env(safe-area-inset-left));
+	padding-right: max(2rem, env(safe-area-inset-right));
+}
+@media screen and (max-width: 736px) {
+	#wrapper {
+		padding-left: max(1rem, env(safe-area-inset-left));
+		padding-right: max(1rem, env(safe-area-inset-right));
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.fade { animation: none !important; }
+	#bg:after, #header, #footer, #main article { transition: none !important; }
+}

@@ -1,81 +1,68 @@
 // Image Gallery
 
 var slideIndex = 1;
-showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
 	showSlides(slideIndex += n);
 }
 
-// Thumbnail image controls
 function currentSlide(n) {
 	showSlides(slideIndex = n);
+}
+
+function loadSlideImage(slide) {
+	var img = slide && slide.querySelector('img[data-src]');
+	if (img) {
+		img.src = img.getAttribute('data-src');
+		img.removeAttribute('data-src');
+	}
 }
 
 function showSlides(n) {
 	var i;
 	var slides = document.getElementsByClassName("mySlides");
-	var dots = document.getElementsByClassName("dot");
+	var counter = document.getElementById("slideCounter");
+	if (!slides.length) return;
 	if (n > slides.length) { slideIndex = 1 }
 	if (n < 1) { slideIndex = slides.length }
 	for (i = 0; i < slides.length; i++) {
 		slides[i].style.display = "none";
 	}
-	for (i = 0; i < dots.length; i++) {
-		dots[i].className = dots[i].className.replace(" active", "");
-	}
+	// Load the visible slide now and its neighbors ahead of time.
+	loadSlideImage(slides[slideIndex - 1]);
+	loadSlideImage(slides[slideIndex % slides.length]);
+	loadSlideImage(slides[(slideIndex - 2 + slides.length) % slides.length]);
 	slides[slideIndex - 1].style.display = "block";
-	dots[slideIndex - 1].className += " active";
+	if (counter) counter.textContent = slideIndex + " of " + slides.length;
 }
 
-// Google Maps
+document.addEventListener('DOMContentLoaded', function () {
+	var container = document.querySelector('.slideshow-container');
+	if (!container) return;
+	showSlides(slideIndex);
 
-// This example requires the Places library. Include the libraries=places
-// parameter when you first load the API. For example:
-// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+	// Swipe support
+	var touchStartX = null;
+	container.addEventListener('touchstart', function (e) {
+		touchStartX = e.changedTouches[0].clientX;
+	}, { passive: true });
+	container.addEventListener('touchend', function (e) {
+		if (touchStartX === null) return;
+		var dx = e.changedTouches[0].clientX - touchStartX;
+		if (Math.abs(dx) > 40) plusSlides(dx < 0 ? 1 : -1);
+		touchStartX = null;
+	}, { passive: true });
 
-var map;
-var service;
-var infowindow;
-
-function initMap() {
-	var bronx = new google.maps.LatLng(40.850521, -73.867836);
-
-	infowindow = new google.maps.InfoWindow();
-
-	map = new google.maps.Map(
-		document.getElementById('map'), { center: bronx, zoom: 16 });
-
-	var request = {
-		query: 'Rhinelander Auto Body LTD.',
-		fields: ['name', 'geometry'],
-	};
-
-	service = new google.maps.places.PlacesService(map);
-
-	service.findPlaceFromQuery(request, function (results, status) {
-		if (status === google.maps.places.PlacesServiceStatus.OK) {
-			for (var i = 0; i < results.length; i++) {
-				createMarker(results[i]);
-			}
-
-			map.setCenter(results[0].geometry.location);
-		}
+	// Arrow keys while the gallery panel is open
+	document.addEventListener('keydown', function (e) {
+		if (!document.body.classList.contains('is-article-visible')) return;
+		var gallery = document.getElementById('gallery');
+		if (!gallery || !gallery.classList.contains('active')) return;
+		if (e.key === 'ArrowRight') plusSlides(1);
+		if (e.key === 'ArrowLeft') plusSlides(-1);
 	});
-}
-
-function createMarker(place) {
-	var marker = new google.maps.Marker({
-		map: map,
-		position: place.geometry.location
-	});
-
-	google.maps.event.addListener(marker, 'click', function () {
-		infowindow.setContent(place.name);
-		infowindow.open(map, this);
-	});
-}
+});
 
 
 // Theme

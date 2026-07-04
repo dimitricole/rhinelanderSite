@@ -4,14 +4,19 @@
 <head>
 	<title>Rhinelander Auto Body - Bronx, NY</title>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+	<meta name="description" content="Rhinelander Auto Body — family-run collision repair and painting in the Bronx since 1938. Expert paint matching, high-tech spray booth, 24-hour towing. 1909 White Plains Road, Bronx, NY." />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/polish.css" />
+	<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23131519'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='34' font-weight='bold' fill='%23ffd700' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E" />
 	<meta property="og:title" content="Rhinelander Auto Body in Bronx, NY" />
-	<meta property="og:description" content="Quality Auto Repair and Painting" />
-	<meta name="twitter:title" content="Dimitri Cole Restaino">
-	<meta name="twitter:description" content="Quality Auto Repair and Painting">
-	<meta property="og:image" content="images/audi-front-micro.jpg" />
-	<meta name="twitter:image:src" content="images/audi-front-micro.jpg">
+	<meta property="og:description" content="Quality Auto Repair and Painting — serving the Bronx, Lower Westchester, and Manhattan since 1938." />
+	<meta property="og:url" content="https://rhinelander.nyc/" />
+	<meta property="og:image" content="https://rhinelander.nyc/images/audi-front-micro.jpg" />
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Rhinelander Auto Body in Bronx, NY">
+	<meta name="twitter:description" content="Quality Auto Repair and Painting — serving the Bronx, Lower Westchester, and Manhattan since 1938.">
+	<meta name="twitter:image" content="https://rhinelander.nyc/images/audi-front-micro.jpg">
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
@@ -118,33 +123,41 @@
 			<!-- Work -->
 			<article id="services">
 				<h2 class="major">Our Services</h2>
-				<h3>Please call for a free estimate!</h3>
 				<p>From welding and repairing the fender to replacing the broken glass, whatever your vehicle needs, you
 					can count on Rhinelander Auto Body LTD. Our expert crew will have your car, truck, or SUV fixed as
 					good as new in no time, so you can get back to your daily life. Once your repairs are done, we go
 					the extra mile to ensure a proper, high-quality paint match with our high-tech spray booth.</p>
 				<p>Need a rental car while yours is in our shop? Let us know, and we'll make one available for you.</p>
-				<center>
-					<p>Collision Specialists</p>
-					<p>Expert Paint Matching</p>
-					<p>Simonizing - Detailing - Glass</p>
-					<p>High-Tech Spray Booth for Quality Paint Jobs</p>
-					<p>Welding</p>
-					<p>Computerized Insurance Estimates</p>
-					<p>24-hour Towing Available</p>
-					<p>24-hour Answering Service Available</p>
-					<p>Car Rental Available</p>
-				</center>
+				<ul class="services-grid">
+					<li>Collision Specialists</li>
+					<li>Expert Paint Matching</li>
+					<li>Simonizing, Detailing &amp; Glass</li>
+					<li>High-Tech Spray Booth</li>
+					<li>Welding</li>
+					<li>Computerized Insurance Estimates</li>
+					<li>24-Hour Towing</li>
+					<li>24-Hour Answering Service</li>
+					<li>Car Rental Available</li>
+				</ul>
+				<ul class="actions services-cta">
+					<li><a href="tel:718-822-8905" class="button primary icon solid fa-phone">Call for a Free Estimate</a></li>
+				</ul>
 			</article>
 
 			<!-- About -->
 			<article id="location">
 				<h2 class="major">Our Location</h2>
 				<h3 class="minor">1909 White Plains Road, Bronx, NY 10462</h3>
-				<p>Open 8AM - 5:30PM Monday through Friday</p>
-				</br>
-				<div id="map" style="height: 30em; width: 100%;"></div>
-				</br>
+				<p>Open 8AM &ndash; 5:30PM Monday through Friday</p>
+				<div class="map-embed">
+					<iframe
+						src="https://www.google.com/maps?q=Rhinelander%20Auto%20Body%2C%201909%20White%20Plains%20Road%2C%20Bronx%2C%20NY%2010462&z=16&output=embed"
+						loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+						title="Map showing Rhinelander Auto Body at 1909 White Plains Road, Bronx, NY" allowfullscreen></iframe>
+				</div>
+				<ul class="actions map-actions">
+					<li><a href="https://maps.google.com/?daddr=1909+White+Plains+Road,+Bronx,+NY+10462" target="_blank" rel="noopener" class="button">Get Directions</a></li>
+				</ul>
 				<p>Take Bronx River Pkwy to the Bronx Zoo exit, make a right hand turn at the traffic light. Go two
 					traffic lights, make sure you stay in the right hand lane, left lane will bring you on to Bronxdale
 					Avenue. Go straight past one more light. We are on the right side of White Plains Road and
@@ -154,184 +167,71 @@
 			<!-- Contact -->
 			<article id="contact">
 				<h2 class="major">Contact</h2>
+				<p>Send us a note and we&rsquo;ll get back to you &mdash; or call <a href="tel:718-822-8905">718.822.8905</a> for a free estimate.</p>
 				<form action="https://formspree.io/mdoawren" method="POST">
 					<label>
 						Your name:
-						<input type="text" name="name">
+						<input type="text" name="name" autocomplete="name" required>
 					</label>
 					<label>
 						Your email:
-						<input type="text" name="_replyto">
+						<input type="email" name="_replyto" autocomplete="email" inputmode="email" required>
 					</label>
 					<label>
 						Your message:
-						<textarea name="message"></textarea>
+						<textarea name="message" rows="4" required></textarea>
 					</label>
-					<label>
-						Your file:
-						<input type="file" name="upload">
-					  </label>
 					<button type="submit">Send</button>
 				</form>
+				<p class="form-hint">Have photos of the damage? Email them to <a href="mailto:rhinelander.collision@gmail.com?Subject=Damage%20Photos">rhinelander.collision@gmail.com</a>.</p>
 			</article>
 
 			<!-- Gallery -->
 			<article id="gallery">
 				<h2 class="major">Gallery</h2>
-				<div class="slideshow-container">
-					<div class="mySlides fade">
-						<div class="numbertext">1 / 18</div>
-						<img src="images/gallery/gal1.jpg" style="width:100%">
-						<!-- <div class="text">Caption Text</div> -->
+								<div class="slideshow-container">
+					<div class="slides-viewport">
+						<div class="mySlides fade"><img src="images/gallery/gal1.jpg" alt="Rhinelander Auto Body — gallery photo 1 of 18" /></div>
+						<div class="mySlides fade"><img data-src="images/gallery/gal2.jpg" alt="Rhinelander Auto Body — gallery photo 2 of 18" /></div>
+						<div class="mySlides fade"><img data-src="images/gallery/gal3.jpg" alt="Rhinelander Auto Body — gallery photo 3 of 18" /></div>
+						<div class="mySlides fade"><img data-src="images/gallery/gal4.jpg" alt="Rhinelander Auto Body — gallery photo 4 of 18" /></div>
+						<div class="mySlides fade"><img data-src="images/gallery/gal5.jpg" alt="Rhinelander Auto Body — gallery photo 5 of 18" /></div>
+						<div class="mySlides fade"><img data-src="images/gallery/gal6.jpg" alt="Rhinelander Auto Body — gallery photo 6 of 18" /></div>
+						<div class="mySlides fade"><img data-src="images/gallery/gal7.jpg" alt="Rhinelander Auto Body — gallery photo 7 of 18" /></div>
+						<div class="mySlides fade"><img data-src="images/gallery/gal8.jpg" alt="Rhinelander Auto Body — gallery photo 8 of 18" /></div>
+						<div class="mySlides fade"><img data-src="images/gallery/gal9.jpg" alt="Rhinelander Auto Body — gallery photo 9 of 18" /></div>
+						<div class="mySlides fade"><img data-src="images/gallery/gal10.jpg" alt="Rhinelander Auto Body — gallery photo 10 of 18" /></div>
+						<div class="mySlides fade"><img data-src="images/gallery/gal11.jpg" alt="Rhinelander Auto Body — gallery photo 11 of 18" /></div>
+						<div class="mySlides fade"><img data-src="images/gallery/gal12.jpg" alt="Rhinelander Auto Body — gallery photo 12 of 18" /></div>
+						<div class="mySlides fade"><img data-src="images/gallery/gal13.jpg" alt="Rhinelander Auto Body — gallery photo 13 of 18" /></div>
+						<div class="mySlides fade"><img data-src="images/gallery/gal14.jpg" alt="Rhinelander Auto Body — gallery photo 14 of 18" /></div>
+						<div class="mySlides fade"><img data-src="images/gallery/gal15.jpg" alt="Rhinelander Auto Body — gallery photo 15 of 18" /></div>
+						<div class="mySlides fade"><img data-src="images/gallery/gal16.jpg" alt="Rhinelander Auto Body — gallery photo 16 of 18" /></div>
+						<div class="mySlides fade"><img data-src="images/gallery/gal17.jpg" alt="Rhinelander Auto Body — gallery photo 17 of 18" /></div>
+						<div class="mySlides fade"><img data-src="images/gallery/gal18.jpg" alt="Rhinelander Auto Body — gallery photo 18 of 18" /></div>
 					</div>
-
-					<div class="mySlides fade">
-						<div class="numbertext">2 / 18</div>
-						<img src="images/gallery/gal2.jpg" style="width:100%">
-						<!-- <div class="text">Caption Two</div> -->
-					</div>
-
-					<div class="mySlides fade">
-						<div class="numbertext">3 / 18</div>
-						<img src="images/gallery/gal3.jpg" style="width:100%">
-						<!-- <div class="text">Caption Three</div> -->
-					</div>
-
-					<div class="mySlides fade">
-						<div class="numbertext">4 / 18</div>
-						<img src="images/gallery/gal4.jpg" style="width:100%">
-						<!-- <div class="text">Caption Text</div> -->
-					</div>
-
-					<div class="mySlides fade">
-						<div class="numbertext">5 / 18</div>
-						<img src="images/gallery/gal5.jpg" style="width:100%">
-						<!-- <div class="text">Caption Two</div> -->
-					</div>
-
-					<div class="mySlides fade">
-						<div class="numbertext">6 / 18</div>
-						<img src="images/gallery/gal6.jpg" style="width:100%">
-						<!-- <div class="text">Caption Three</div> -->
-					</div>
-
-					<div class="mySlides fade">
-						<div class="numbertext">7 / 18</div>
-						<img src="images/gallery/gal7.jpg" style="width:100%">
-						<!-- <div class="text">Caption Text</div> -->
-					</div>
-
-					<div class="mySlides fade">
-						<div class="numbertext">8 / 18</div>
-						<img src="images/gallery/gal8.jpg" style="width:100%">
-						<!-- <div class="text">Caption Two</div> -->
-					</div>
-
-					<div class="mySlides fade">
-						<div class="numbertext">9 / 18</div>
-						<img src="images/gallery/gal9.jpg" style="width:100%">
-						<!-- <div class="text">Caption Three</div> -->
-					</div>
-
-					<div class="mySlides fade">
-						<div class="numbertext">10 / 18</div>
-						<img src="images/gallery/gal10.jpg" style="width:100%">
-						<!-- <div class="text">Caption Three</div> -->
-					</div>
-
-					<div class="mySlides fade">
-						<div class="numbertext">11 / 18</div>
-						<img src="images/gallery/gal11.jpg" style="width:100%">
-						<!-- <div class="text">Caption Three</div> -->
-					</div>
-
-					<div class="mySlides fade">
-						<div class="numbertext">12 / 18</div>
-						<img src="images/gallery/gal12.jpg" style="width:100%">
-						<!-- <div class="text">Caption Three</div> -->
-					</div>
-
-					<div class="mySlides fade">
-						<div class="numbertext">13 / 18</div>
-						<img src="images/gallery/gal13.jpg" style="width:100%">
-						<!-- <div class="text">Caption Three</div> -->
-					</div>
-
-					<div class="mySlides fade">
-						<div class="numbertext">14 / 18</div>
-						<img src="images/gallery/gal14.jpg" style="width:100%">
-						<!-- <div class="text">Caption Three</div> -->
-					</div>
-
-					<div class="mySlides fade">
-						<div class="numbertext">15 / 18</div>
-						<img src="images/gallery/gal15.jpg" style="width:100%">
-						<!-- <div class="text">Caption Three</div> -->
-					</div>
-
-					<div class="mySlides fade">
-						<div class="numbertext">16 / 18</div>
-						<img src="images/gallery/gal16.jpg" style="width:100%">
-						<!-- <div class="text">Caption Three</div> -->
-					</div>
-
-					<div class="mySlides fade">
-						<div class="numbertext">17 / 18</div>
-						<img src="images/gallery/gal17.jpg" style="width:100%">
-						<!-- <div class="text">Caption Three</div> -->
-					</div>
-
-					<div class="mySlides fade">
-						<div class="numbertext">18 / 18</div>
-						<img src="images/gallery/gal18.jpg" style="width:100%">
-						<!-- <div class="text">Caption Three</div> -->
-					</div>
-
-					<!-- Next and previous buttons -->
-					<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-					<a class="next" onclick="plusSlides(1)">&#10095;</a>
-				</div>
-				<br>
-
-				<!-- The dots/circles -->
-				<div style="text-align:center">
-					<span class="dot" onclick="currentSlide(1)"></span>
-					<span class="dot" onclick="currentSlide(2)"></span>
-					<span class="dot" onclick="currentSlide(3)"></span>
-					<span class="dot" onclick="currentSlide(4)"></span>
-					<span class="dot" onclick="currentSlide(5)"></span>
-					<span class="dot" onclick="currentSlide(6)"></span>
-					<span class="dot" onclick="currentSlide(7)"></span>
-					<span class="dot" onclick="currentSlide(8)"></span>
-					<span class="dot" onclick="currentSlide(9)"></span>
-					<span class="dot" onclick="currentSlide(10)"></span>
-					<span class="dot" onclick="currentSlide(11)"></span>
-					<span class="dot" onclick="currentSlide(12)"></span>
-					<span class="dot" onclick="currentSlide(13)"></span>
-					<span class="dot" onclick="currentSlide(14)"></span>
-					<span class="dot" onclick="currentSlide(15)"></span>
-					<span class="dot" onclick="currentSlide(16)"></span>
-					<span class="dot" onclick="currentSlide(17)"></span>
-					<span class="dot" onclick="currentSlide(18)"></span>
+					<a class="prev" role="button" aria-label="Previous photo" onclick="plusSlides(-1)">&#10094;</a>
+					<a class="next" role="button" aria-label="Next photo" onclick="plusSlides(1)">&#10095;</a>
+					<div class="slide-counter" aria-live="polite"><span id="slideCounter">1 of 18</span></div>
 				</div>
 			</article>
 		</div>
 		<!-- Footer -->
 		<footer id="footer">
 			<ul class="icons">
-				<li><a href="tel:718-822-8905"" class=" icon solid style2 fa-phone"><span class="label">Phone</span></a>
-				</li>
+				<li><a href="tel:718-822-8905" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
 				<li><a href="mailto:rhinelander.collision@gmail.com?Subject=Hello%20There"
 						class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
 				<li><a href="https://www.facebook.com/pages/Rhinelander-Auto-Body/159159784114289"
 						class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-				<li style="padding-bottom: 2%;"><a href="https://www.instagram.com/rhinelanderautobody/"
+				<li><a href="https://www.instagram.com/rhinelanderautobody/"
 						class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-				<p class="phoneNumbers" style="margin: 0 0 0 0;">Phone: <b><a href="tel:718-822-8905">718.822.8905</a></a></b>&nbsp;&nbsp;&nbsp;&nbsp;Fax: 718.822.7844</p>
-				<p class="phoneNumbers" style="margin: 0 0 0 0;">24-Hour Towing: <b><a href="tel:718-823-1313">718.823.1313</a></b>&nbsp;&nbsp;&nbsp;&nbsp;R#: 2030612</p>
 			</ul>
-			<p><a href="http://dimitricole.github.io/dimitriColeDesigns/index.html"
-					style="text-decoration: none;color:grey;">&copy; Dimitri Cole Designs.</a></p>
+			<div class="contact-lines">
+				<p class="phoneNumbers">Phone: <b><a href="tel:718-822-8905">718.822.8905</a></b> <span class="sep">&middot;</span> Fax: 718.822.7844</p>
+				<p class="phoneNumbers">24-Hour Towing: <b><a href="tel:718-823-1313">718.823.1313</a></b> <span class="sep">&middot;</span> R#: 2030612</p>
+			</div>
+			<p><a href="https://www.dimitricoledesigns.com" class="credit">&copy; Dimitri Cole Designs.</a></p>
 		</footer>
 
 	</div>
@@ -345,9 +245,6 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=REMOVED-API-KEY&libraries=places&callback=initMap"
-		async defer></script>
 </body>
 
 </html>
