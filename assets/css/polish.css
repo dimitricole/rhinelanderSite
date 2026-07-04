@@ -137,12 +137,55 @@
 	color: #f2f2f2;
 }
 
-/* --- Contact form ------------------------------------------------------------- */
-.form-hint {
-	font-size: 0.85rem;
-	opacity: 0.8;
-	margin-top: 1.25rem;
+/* --- Contact actions ------------------------------------------------------------ */
+.contact-actions {
+	display: flex;
+	flex-direction: column;
+	gap: 0.85rem;
+	margin: 1.5rem 0 2rem;
 }
+.contact-action {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 1rem 1.25rem;
+	border: 1px solid var(--hairline);
+	border-radius: 12px;
+	background: rgba(255, 255, 255, 0.04);
+	border-bottom-width: 1px !important; /* template underlines links */
+	transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.contact-action:hover {
+	background: rgba(255, 255, 255, 0.09);
+	transform: translateY(-1px);
+}
+.contact-action.primary-action {
+	background: var(--gold);
+	border-color: var(--gold);
+}
+.contact-action.primary-action:hover { background: #ffdf70; }
+.contact-action.primary-action .ca-title,
+.contact-action.primary-action .ca-detail,
+.contact-action.primary-action .ca-icon { color: #131519; }
+.ca-icon {
+	flex: none;
+	width: 2.6rem;
+	height: 2.6rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	border: 1px solid currentColor;
+	font-size: 1rem;
+}
+.ca-body { display: flex; flex-direction: column; gap: 0.15rem; }
+.ca-title {
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	font-size: 0.85rem;
+}
+.ca-detail { font-size: 0.85rem; opacity: 0.85; }
 
 /* --- Footer -------------------------------------------------------------------- */
 .contact-lines { margin: 1rem 0 0.75rem; }
